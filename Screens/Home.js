@@ -3,6 +3,7 @@ import { Image,StyleSheet,Button, Text, View,TextInput } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { ImageBackground } from 'react-native';
 import React from 'react';
+import { Ionicons } from '@expo/vector-icons';
 
 
 export default function Home({navigation}) {
@@ -11,14 +12,23 @@ export default function Home({navigation}) {
   <View >
       <View style={styles.image}> 
       </View>
-      <View style={styles.image2}>
-      </View>
-      <Image
-        source={{ uri: 'asset:/app_icon.png' }}
-        style={{ width: 40, height: 40 }}
-          />
+      
+
+      <View style={styles.circle}>
+    </View>
+    <View style={{position:'absolute',top:210,left:200,}}>
+    <Ionicons name="star" size={24} color="white" />
+    </View>
+    <View style={styles.whatever}>
+      <Text  style={{fontSize:28,color:'black'}} >
+        Digital Market
+      </Text>
+    </View>
+
+
+     
       <View style={styles.mansi}>
-       <Text style={{fontSize:30,color:'skyblue'}}>Welcome to Digital Market</Text>
+       <Text style={{fontSize:28,color:'purple'}}>Welcome to Digital Market</Text>
       </View>
       
       <View style={styles.subom}>
@@ -42,12 +52,20 @@ export default function Home({navigation}) {
 const styles = StyleSheet.create({
   container: {
     
-    padding:50,
+    
    
   },
   mansi:{
     position:'absolute',
-    top:200,
+    top:340,
+    left:20,
+    
+    
+    
+  },
+  whatever:{
+    position:'absolute',
+    top:210,
     left:20,
     
     
@@ -57,7 +75,7 @@ const styles = StyleSheet.create({
     justifyContent:'space-around',
     flexDirection:'column',
     position:'absolute',
-    top:500,
+    top:600,
     right:10,
     flexDirection:'row',
     padding:20
@@ -66,7 +84,7 @@ const styles = StyleSheet.create({
 
   anything:{
     position:'absolute',
-    top:440,
+    top:540,
     right:5,
     flexDirection:'row',
     padding:20
@@ -91,6 +109,15 @@ const styles = StyleSheet.create({
     width:"50%",
     justifyContent:'center'
 
+  },
+  circle: {
+    width: 50,
+    height: 50,
+    borderRadius: 100 / 2,
+    backgroundColor: "skyblue",
+    position:'absolute',
+    top:200,
+    left:190,
   }
 
 });

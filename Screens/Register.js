@@ -1,57 +1,80 @@
 
-import { StyleSheet,Button, Text, View,TextInput } from 'react-native';
+import { TouchableOpacity, StyleSheet,Button, Text, View,TextInput } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import React from 'react';
+import React,{useState} from 'react';
+import { auth } from '../firebase'
+import { Ionicons } from '@expo/vector-icons';
 
-export default function Register() {
+const Register = () =>{
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleSignUp = () => {
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then(userCredentials => {
+        const user = userCredentials.user;
+        console.log('Registered with:', user.email);
+      })
+      .catch(error => alert(error.message))
+  }
+
   return (
     <View style={styles.container}>
     <View style={styles.Eb}>
-      <Text>
+      <Text   style={{   fontSize:32,color:'black'}}>
         Welcome to Digital Market
       </Text>
-      <Text style={{paddingRight:30}}>
+      <Text style={{paddingRight:10 ,fontSize:20,color:'purple'}}>
         Please enter your credentials
       </Text>
     </View>
-      <View style={styles.Ab}>
-      <Text style={{paddingRight:20}}>
-        First Name
-      </Text>
-        <TextInput style={{borderWidth:2,paddingRight:70}} placeholder='First Name'/>
-      </View>
+
       <View style={styles.Bb}>
-        <Text style={{paddingRight:20}} >
-          Last Name
+        <Text style={{paddingRight:20 , fontSize:22,color:'purple'}} >
+          Password
         </Text>
-        <TextInput style={{borderWidth:2,paddingRight:70}} placeholder='Last Name' >
+        <TextInput style={{borderWidth:2,paddingRight:70}} placeholder='Password' 
+        value={password}
+          onChangeText={text => setPassword(text)}
+        >
         </TextInput>
       </View>
       <View style={styles.Cb}>
-        <Text style={{paddingRight:20}} >
-          User Name
+        <Text style={{paddingRight:20 , fontSize:22,color:'purple'}} >
+         Email
         </Text>
-        <TextInput style={{borderWidth:2,paddingRight:70}} placeholder='User Name' >
+        <TextInput style={{borderWidth:2,paddingRight:120}} placeholder='Email' value={email}
+          onChangeText={text => setEmail(text)} >
         </TextInput>
       </View>
-      <View style={styles.Db}>
-        <Text style={{paddingRight:20}} >
-          Password
-        </Text>
-        <TextInput style={{borderWidth:2,paddingRight:70}} placeholder='Password' >
-        </TextInput>
+      <View  style={styles.Db}>
+      <TouchableOpacity
+          onPress={handleSignUp}
+          style={[styles.button, styles.buttonOutline]}
+        >
+          <Text style={styles.buttonOutlineText}>Register</Text>
+        </TouchableOpacity>
       </View>
-      <View style={{position:'absolute',  top:600,  right:115,height:120,width:200}}>
-        <Button  title='Register'/>
-      </View>
+
+
+      <View style={styles.circle}>
     </View>
+    <View style={{position:'absolute',top:210,left:380,}}>
+    <Ionicons name="star" size={24} color="white" />
+    </View>
+
+      </View>
+
   );
 }
+
+export default Register
 
 const styles = StyleSheet.create({
   container: {
     
-    padding:50,
    
   },
   Ab:{
@@ -64,8 +87,8 @@ const styles = StyleSheet.create({
   Bb:{
     
     position:'absolute',
-    top:400,
-    right:105,
+    top:600,
+    right:125,
     flexDirection:'row',
     alignItems:'center'
    
@@ -73,28 +96,46 @@ const styles = StyleSheet.create({
   Cb:{
    
     position:'absolute',
-    top:450,
-    right:105,
+    top:550,
+    right:100,
     flexDirection:'row',
    
   },
   Db:{
     
     position:'absolute',
-    top:500,
-    right:105,
-    flexDirection:'row',
-    
-    
+    top:700,
+    right:160,
   },
   Eb:{
     position:'absolute',
-    top:100,
-    right:180,
+    top:200,
+    right:70,
     flexDirection:'column',
+  },
+  button: {
+    backgroundColor: 'skyblue',
+    width: '100%',
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: '700',
+    fontSize: 16,
+  },
+  
+  circle: {
+    width: 50,
+    height: 50,
+    borderRadius: 100 / 2,
+    backgroundColor: "skyblue",
+    position:'absolute',
+    top:200,
+    left:370,
+  },
 
 
-    
-  }
 
 });

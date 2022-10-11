@@ -3,10 +3,13 @@
 import { StyleSheet,Button, Text, View,TextInput } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
+
+
 import React ,{useState} from 'react';
 
 
 export default function Tablet({navigation}) {
+ 
   return (
     <View style={styles.container}>
     
@@ -16,8 +19,13 @@ export default function Tablet({navigation}) {
     <Text style={styles.mansi}>
       Redmi 5
     </Text>
-
+      <View>
+        <Text>
+          Redmi 5
+        </Text>
+      </View>
    
+
     </View>
   );
 }
