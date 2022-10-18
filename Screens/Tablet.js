@@ -1,30 +1,57 @@
 
-
-import { StyleSheet,Button, Text, View,TextInput } from 'react-native';
+import { StyleSheet,Image,Button, Text, View,TextInput } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import React from 'react';
 
 
 
-import React ,{useState} from 'react';
-
-
-export default function Tablet({navigation}) {
- 
+export default function Laptop({navigation}) {
   return (
     <View style={styles.container}>
-    
-    <View style={styles.pos}>
-    </View>
 
-    <Text style={styles.mansi}>
-      Redmi 5
-    </Text>
       <View>
-        <Text>
-          Redmi 5
+      <Image style={{ position:'absolute', top:60, right:0,width:320,height:220}}
+          source={require('../assets/tabletimage.jpg')}
+          />
+      </View>
+      <View style={{ }}>
+             <Text style={{   fontSize:28,color:'purple',position:'absolute', top:355, right:60,flex:1}}>
+           Microsoft Windows Tablet
+          </Text>
+          <Text style={{position:'absolute',fontWeight: 'bold', top:400, right:231,fontSize:18,color:'black',position:'absolute',}}>
+           -SnapDragon 855
+        </Text>
+        <Text style={{position:'absolute',fontWeight: 'bold', top:425, right:233,fontSize:18,color:'black',position:'absolute',}}>
+           -Nvdia GTX 3050
+        </Text>
+        <Text style={{position:'absolute',fontWeight: 'bold', top:449, right:278,fontSize:18,color:'black',position:'absolute',}}>
+           -8 Gb Ram
+        </Text>
+        <Text style={{position:'absolute',fontWeight: 'bold', top:475, right:285,fontSize:18,color:'black',position:'absolute',}}>
+           -1 Tb SSd
         </Text>
       </View>
-   
+      <View style={{ position:'absolute', top:450, right:80,}}>
+        <Text  style={{fontSize:23,color:'black',fontWeight: 'bold',}}  >
+          Buy at
+        </Text>
+        <Text   style={{fontSize:15,color:'black',fontWeight: 'bold'}} >
+          10,000
+        </Text>
+      </View>
+      <View style={{ position:'absolute', top:590, right:280,}}>
+        <Text   style={{fontSize:19,color:'black',fontWeight: 'bold'}}>
+          Colors Available
+        </Text>
+      </View>
+      <View style={styles.circle}>
+       </View>
+       <View style={styles.circle2}>
+       </View>
+  
+       <View style={styles.circle3}>
+       </View>
+       
 
     </View>
   );
@@ -32,27 +59,53 @@ export default function Tablet({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
+    
     padding:50,
+   
   },
-  mansi:{
-    position:'absolute',
-    top:350,
-    left:115,
-    flexDirection:'row'
+ 
+  image:{
+    backgroundColor:'pink',
+    height:"400%",
+    width:"00%",
+    opacity:20
   },
   pos:{
-    width: 250,
-    height: 250,
+    position:'absolute',
+    top:150,
+    left:40,
+    flexDirection:'column'
+  },
+  circle: {
+    width: 50,
+    height: 50,
+    borderRadius: 100 / 2,
     backgroundColor: "black",
     position:'absolute',
-    top:120,
-    right:90
+    top:630,
+    left:25,
   },
-  picker:{
-    width:300,
-    height:45,
-    borderColor:'red',
-    borderwidth:1
+  circle2: {
+    width: 50,
+    height: 50,
+    borderRadius: 100 / 2,
+    backgroundColor: "grey",
+    position:'absolute',
+    top:630,
+    left:95,
+  },
+  circle3: {
+    width: 50,
+    height: 50,
+    borderRadius: 100 / 2,
+    backgroundColor: "blue",
+    position:'absolute',
+    top:630,
+    left:165,
   }
+  
+  
+
+
 
 });

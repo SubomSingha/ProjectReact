@@ -1,5 +1,5 @@
 
-import { TouchableOpacity,StyleSheet,Button, Text, View,TextInput } from 'react-native';
+import {ImageBackground ,TouchableOpacity,StyleSheet,Button, Text, View,TextInput } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import React,{useState ,useEffect} from 'react';
 import { Ionicons } from '@expo/vector-icons';
@@ -23,6 +23,8 @@ useEffect(() => {
   return unsubscribe
 }, [])
 
+
+
 const handleLogin = () => {
   auth
     .signInWithEmailAndPassword(email, password)
@@ -35,8 +37,11 @@ const handleLogin = () => {
 
   return (
     <View style={styles.container}>
-
-
+  <View>
+    <ImageBackground source={require('../assets/background2.jpg')} style={{width:500,height:950}}>
+ 
+    </ImageBackground>
+</View>
 
     <View style={styles.pos}>
       <Text  style={{   fontSize:32,color:'black'}}>
@@ -47,7 +52,7 @@ const handleLogin = () => {
       </Text>
     
     </View>
-      <View style={styles.mansi}>
+      <View style={styles.Emailinput}>
       <Text style={{paddingRight:5,fontSize:20,color:'purple'}}>
         Email
       </Text>
@@ -57,7 +62,7 @@ const handleLogin = () => {
         />
       </View>
       
-      <View style={styles.subom}>
+      <View style={styles.Passwordinput}>
         <Text style={{paddingRight:5,fontSize:20,color:'purple'}} >
           Password
         </Text>
@@ -67,7 +72,7 @@ const handleLogin = () => {
         </TextInput>
       </View>
 
-      <View style={styles.tos}>
+      <View style={styles.Loginbutton}>
       <TouchableOpacity
           onPress={handleLogin}
           style={styles.button}
@@ -85,7 +90,27 @@ const handleLogin = () => {
     <View style={{position:'absolute',top:210,left:378,}}>
     <Ionicons name="star" size={24} color="white" />
     </View>
-    
+ 
+    <TouchableOpacity 
+                    onPress={() => navigation.navigate('Register')}
+                    style={[styles.signIn, {
+                        borderColor: '#009387',
+                        borderWidth: 0,
+                        marginTop: 11,
+                        position:'absolute',top:724, left:245,
+                      
+                    }]}
+                >
+                    <Text style={[styles.textSign, {
+                        color: 'skyblue'
+                    }]}>Sign Up</Text>
+                </TouchableOpacity>
+
+            <View style={{position:'absolute',top:750, left:116,}}>
+              <Text style={{fontSize:15,color:'black',fontWeight: 'bold'}}>
+                If you are new here?
+              </Text>
+            </View>
 
     </View>
   );
@@ -96,7 +121,7 @@ export default Login
 const styles = StyleSheet.create({
   container: {
   },
-  mansi:{
+  Emailinput:{
     position:'absolute',
     top:550,
     left:99,
@@ -105,7 +130,7 @@ const styles = StyleSheet.create({
     
     
   },
-  subom:{
+  Passwordinput:{
     position:'absolute',
     top:600,
     right:60,
@@ -123,7 +148,7 @@ const styles = StyleSheet.create({
     left:20,
     flexDirection:'column' 
   },
-  tos:{
+ Loginbutton:{
     position:'absolute',
     top:690,
     left:190,
@@ -153,5 +178,28 @@ const styles = StyleSheet.create({
     left:365,
     
   },
+  Registerbutton:{
+    position:'absolute',
+    top:750,
+    left:165,
+    flexDirection:'row' 
+    
+  },
+  signIn: {
+    width: '10%',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10
+},
+textSign: {
+    fontSize: 13,
+    fontWeight: 'bold'
+},
+image2: {
+  flex: 1,
+  justifyContent: "center"
+},
+
 
 });

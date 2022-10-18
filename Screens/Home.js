@@ -19,7 +19,7 @@ export default function Home({navigation}) {
     <View style={{position:'absolute',top:210,left:200,}}>
     <Ionicons name="star" size={24} color="white" />
     </View>
-    <View style={styles.whatever}>
+    <View style={styles.Text1}>
       <Text  style={{fontSize:28,color:'black'}} >
         Digital Market
       </Text>
@@ -27,18 +27,18 @@ export default function Home({navigation}) {
 
 
      
-      <View style={styles.mansi}>
+      <View style={styles.Text2}>
        <Text style={{fontSize:28,color:'purple'}}>Welcome to Digital Market</Text>
       </View>
       
-      <View style={styles.subom}>
+      <View style={styles.RegisterButton}>
         <Text   style={{ fontSize:15,color:'purple'}}>If You are new here </Text>
         <Button title='Register' onPress={()=>
         navigation.navigate("Register")}>
         </Button>
       </View>
       
-      <View style={styles.anything}>
+      <View style={styles.Loginbutton}>
         <Text style={{padding:10,fontSize:15,color:'purple'}}>If You are already a user then</Text>
         <Button title='Log  in'  onPress={()=>
         navigation.navigate("login")}>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     
    
   },
-  mansi:{
+Text2:{
     position:'absolute',
     top:340,
     left:20,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     
     
   },
-  whatever:{
+  Text1:{
     position:'absolute',
     top:210,
     left:20,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     
     
   },
-  subom:{
+  RegisterButton:{
     justifyContent:'space-around',
     flexDirection:'column',
     position:'absolute',
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     
   },
 
-  anything:{
+  Loginbutton:{
     position:'absolute',
     top:540,
     right:5,

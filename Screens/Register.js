@@ -1,5 +1,5 @@
 
-import { TouchableOpacity, StyleSheet,Button, Text, View,TextInput } from 'react-native';
+import { ImageBackground,TouchableOpacity, StyleSheet,Button, Text, View,TextInput } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import React,{useState} from 'react';
 import { auth } from '../firebase'
@@ -20,9 +20,17 @@ const Register = () =>{
       .catch(error => alert(error.message))
   }
 
+
+
+  
   return (
     <View style={styles.container}>
-    <View style={styles.Eb}>
+    <View>
+    <ImageBackground source={require('../assets/background2.jpg')} style={{width:500,height:950}}>
+ 
+    </ImageBackground>
+</View>
+    <View style={styles.Text1}>
       <Text   style={{   fontSize:32,color:'black'}}>
         Welcome to Digital Market
       </Text>
@@ -31,7 +39,7 @@ const Register = () =>{
       </Text>
     </View>
 
-      <View style={styles.Bb}>
+      <View style={styles.Passwordbutton}>
         <Text style={{paddingRight:20 , fontSize:22,color:'purple'}} >
           Password
         </Text>
@@ -41,7 +49,7 @@ const Register = () =>{
         >
         </TextInput>
       </View>
-      <View style={styles.Cb}>
+      <View style={styles.Emailinput}>
         <Text style={{paddingRight:20 , fontSize:22,color:'purple'}} >
          Email
         </Text>
@@ -49,7 +57,7 @@ const Register = () =>{
           onChangeText={text => setEmail(text)} >
         </TextInput>
       </View>
-      <View  style={styles.Db}>
+      <View  style={styles.Registerbutton}>
       <TouchableOpacity
           onPress={handleSignUp}
           style={[styles.button, styles.buttonOutline]}
@@ -84,7 +92,7 @@ const styles = StyleSheet.create({
     flexDirection:'row',   
     
   },
-  Bb:{
+ Passwordbutton:{
     
     position:'absolute',
     top:600,
@@ -93,7 +101,7 @@ const styles = StyleSheet.create({
     alignItems:'center'
    
   },
-  Cb:{
+ Emailinput:{
    
     position:'absolute',
     top:550,
@@ -101,13 +109,13 @@ const styles = StyleSheet.create({
     flexDirection:'row',
    
   },
-  Db:{
+  Registerbutton:{
     
     position:'absolute',
     top:700,
     right:160,
   },
-  Eb:{
+  Text1:{
     position:'absolute',
     top:200,
     right:70,
