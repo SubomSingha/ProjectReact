@@ -49,29 +49,29 @@ export default function Product() {
       
 
     <TouchableWithoutFeedback onPress={() => navigation.navigate('Laptop')}>
-    <Image style={{ position:'absolute', top:480, left:40,width:139,height:96}}
+    <Image style={{ position:'absolute', top:540, left:40,width:139,height:96}}
           source={require('../assets/laptopimage.jpg')}
           />
       </TouchableWithoutFeedback>
 
       <TouchableWithoutFeedback onPress={() => navigation.navigate('Phone')}>
-     <Image style={{ position:'absolute', top:480, left:300,width:84,height:92}}
+     <Image style={{ position:'absolute', top:540, left:300,width:84,height:92}}
           source={require('../assets/phoneimage.jpg')}  />
     </TouchableWithoutFeedback>
         
     <TouchableWithoutFeedback onPress={() => navigation.navigate('Tablet')}>
-    <Image style={{ position:'absolute', top:680, left:40,width:139,height:100}}
+    <Image style={{ position:'absolute', top:710, left:40,width:139,height:100}}
           source={require('../assets/tabletimage.jpg')}
           />
     </TouchableWithoutFeedback>
 
      <TouchableWithoutFeedback onPress={() => navigation.navigate('Acces')}>   
-    <Image style={{ position:'absolute', top:680, left:300,width:80,height:95}}
+    <Image style={{ position:'absolute', top:710, left:300,width:80,height:95}}
           source={require('../assets/phonecase.jpeg')}
           />
     </TouchableWithoutFeedback>
 
-      <View style={{ position:'absolute', top:420, left:10,width:190,height:170}}>
+      <View style={{ position:'absolute', top:480, left:10,width:190,height:170}}>
         <Text  style={{fontSize:23,color:'black',fontWeight: 'bold'}}>
           Featured Products
         </Text>
@@ -80,7 +80,7 @@ export default function Product() {
         </Text>
       </View>
          <View>
-             <View style={{ position:'absolute', top:535, right:210,flex:1}}>
+             <View style={{ position:'absolute', top:595, right:210,flex:1}}>
              <Text style={{   fontSize:18,color:'purple'}}>
                Windows Laptop
              </Text>
@@ -88,7 +88,7 @@ export default function Product() {
                $478
               </Text>
             </View>
-            <View style={{ position:'absolute', top:535, left:250,}}>
+            <View style={{ position:'absolute', top:595, left:250,}}>
               <Text style={{   fontSize:18,color:'purple'}}>
              XYZ Phone
            </Text>
@@ -96,7 +96,7 @@ export default function Product() {
               $238
            </Text>
           </View>
-           <View style={{ position:'absolute', top:740, right:220,}}>
+           <View style={{ position:'absolute', top:770, right:220,}}>
             <Text  style={{   fontSize:18,color:'purple'}}>
            Microsoft Tablet
           </Text>
@@ -104,7 +104,7 @@ export default function Product() {
              $168
             </Text>
            </View>
-           <View  style={{ position:'absolute', top:740, left:250,}}>
+           <View  style={{ position:'absolute', top:770, left:250,}}>
            <Text style={{   fontSize:16,color:'purple'}}>
             XYZ Phone Cover
            </Text>
@@ -119,6 +119,26 @@ export default function Product() {
     </TouchableWithoutFeedback>
     </View>
 
+  <View>
+    <Text  style={{ position:'absolute', top:310, right:280,fontSize:20,color:'black' ,fontWeight: 'bold'}} >
+      Categories
+    </Text>
+    <View>
+
+    </View>
+  </View>
+  <View style={{position:'absolute',top:395,right:320,}}>
+    <Ionicons name="phone-portrait-outline" size={60} color="black" />
+    </View>
+    <View style={{position:'absolute',top:395,right:200,}}>
+    <Ionicons name="laptop-outline" size={69} color="black" />
+    <Text>
+
+    </Text>
+    </View>
+    <View style={{position:'absolute',top:395,right:90,}}>
+    <Ionicons name="ios-watch-outline" size={69} color="black" />
+    </View>
     </View>
   );
 }

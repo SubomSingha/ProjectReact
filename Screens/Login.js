@@ -56,7 +56,7 @@ const handleLogin = () => {
       <Text style={{paddingRight:5,fontSize:20,color:'purple'}}>
         Email
       </Text>
-        <TextInput style={{borderWidth:2,borderBottomWidth:5,paddingRight:180}} placeholder='Email' 
+        <TextInput style={{borderWidth:2,borderBottomWidth:5,width:200}} placeholder='Email' 
           value={email}
           onChangeText={text => setEmail(text)}
         />
@@ -66,7 +66,7 @@ const handleLogin = () => {
         <Text style={{paddingRight:5,fontSize:20,color:'purple'}} >
           Password
         </Text>
-        <TextInput style={{borderWidth:2,borderBottomWidth:5,paddingRight:150}} placeholder='Password' 
+        <TextInput style={{borderWidth:2,borderBottomWidth:5,width:200}} placeholder='Password' 
         value={password}
           onChangeText={text => setPassword(text)} >
         </TextInput>
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   Passwordinput:{
     position:'absolute',
     top:600,
-    right:60,
+    right:75,
     flexDirection:'row',
   },
   image:{

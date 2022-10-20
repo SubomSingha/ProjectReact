@@ -3,7 +3,8 @@ import {  NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createAppContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons'; 
 
 
 import Home from  "./Screens/Home";
@@ -28,9 +29,20 @@ const Tab = createBottomTabNavigator()
 export function TabNavigator(){
   return(
           <Tab.Navigator initialRouteName='Product'>
-               <Tab.Screen options={{ headerShown: false }} name='Product' component={Product}/>  
-              <Tab.Screen options={{ headerShown: false }} name='Profile' component={Profile}/>
-              <Tab.Screen options={{ headerShown: false }} name='Setting' component={Setting}/>
+               <Tab.Screen options={{ headerShown: false  , tabBarLabel: 'Product',
+                 tabBarIcon: ({ color, size }) => (
+                 <Ionicons name="home" color={'black'} size={size}/>) }}
+                  name='Product' 
+                   component={Product}/> 
+
+              <Tab.Screen options={{ headerShown: false , tabBarLabel: 'Product',
+                 tabBarIcon: ({ color, size }) => (
+                 <Ionicons name="person-circle-sharp" color={'black'} size={size}/>)  }} name='Profile' component={Profile}/>
+              
+              
+              <Tab.Screen options={{ headerShown: false, tabBarLabel: 'Setting',
+                 tabBarIcon: ({ color, size }) => (
+                 <Ionicons name="settings-outline" color={'black'} size={size}/>) }} name='Setting' component={Setting}/>
           </Tab.Navigator>
   )
 }
